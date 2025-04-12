@@ -1,103 +1,112 @@
+// /* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from "next/image";
+import logo from "@/static/logo/logo-dark.png";
+import hero1 from "@/static/image/slider-image1.png";
+import Link from "next/link";
+import { Nunito_Sans, Raleway } from "next/font/google";
+import { ChevronRight, Search } from "lucide-react";
+// import Seliders from "./selider/page";
+import HeroSlider from "./selider/page";
+
+const nunito = Nunito_Sans({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
+const raleway = Raleway({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div>
+        <div
+          className={`${nunito.className} flex justify-center bg-[#ffffff] navgb`}
+        >
+          <div className="max-w-[1400px] w-full">
+            <div className="mx-[20px] py-[20px] ">
+              <nav className="w-full flex justify-between">
+                <div>
+                  <Image src={logo} alt="LOGO" className="w-[188px]  " />
+                </div>
+                <div className="flex justify-center items-center">
+                  <div className="text-[14px] font-[800] flex justify-between items-center gap-[50px]  ">
+                    <Link href={"#"}>HOME</Link>
+                    <Link href={"#"}>PAGES</Link>
+                    <Link href={"#"}>COURSES</Link>
+                    <Link href={"#"}>PORTFOLO</Link>
+                    <Link href={"#"}>BLOG</Link>
+                    <Link href={"#"}>SHOP</Link>
+                  </div>
+                </div>
+                <div className="">
+                  <div className="bg-[#F1F6FF] flex py-[10px] px-[20px] rounded-3xl ">
+                    <input
+                      type="search"
+                      name=""
+                      id=""
+                      placeholder="SEARCH"
+                      className="w-[150px] "
+                    />
+                    <Search />
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <section className="flex justify-center bg-[#ffffff] ">
+          <div className="max-w-[1400px] w-full">
+            <div className="mx-[20px] py-[20px] mt-[30px] ">
+              <div className="w-full flex justify-between">
+                <div className="flex flex-col justify-center ">
+                  <h1
+                    className={`${raleway.className} text-[80px] font-[600] text-[#1C2437] leading-[87.9px] `}
+                  >
+                    <span className="font-[100] ">Modern Life</span>
+                    <br /> Coach School Podcast
+                  </h1>
+                  <p
+                    className={`${nunito.className} text-[18px] font-[600] text-[#415674] leading-[32px] w-[500px] `}
+                  >
+                    We understand the importance of approaching each work
+                    integrally and believe in the power of simple.
+                  </p>
+                  <div>
+                    <div>
+                      <button
+                        className={`${nunito.className} px-[36px]  bg-[#40d75e] rounded-3xl text-[14px] font-[700] text-[#fff] leading-[50px] flex justify-center items-center gap-[6px] `}
+                      >
+                        GET COACH
+                        <ChevronRight className="size-[20px] " />
+                      </button>
+                    </div>
+                    <div>
+                      <span> </span>
+                      Watch Video
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <Image src={hero1} alt="LOGO" className="  " />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="flex justify-center bg-[#ffffff] ">
+          <div className="max-w-[1400px] w-full">
+            <div className="mx-[20px] py-[20px] mt-[30px] ">
+              <div className="w-full ">
+                <HeroSlider />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
