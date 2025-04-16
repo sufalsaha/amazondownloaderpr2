@@ -6,7 +6,8 @@ import Link from "next/link";
 import { Nunito_Sans, Raleway } from "next/font/google";
 import { ChevronRight, Search } from "lucide-react";
 // import Seliders from "./selider/page";
-import HeroSlider from "./selider/page";
+
+import CustomSlider from "./test/page";
 
 const nunito = Nunito_Sans({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -101,7 +102,10 @@ export default function Home() {
           <div className="max-w-[1400px] w-full">
             <div className="mx-[20px] py-[20px] mt-[30px] ">
               <div className="w-full ">
-                <HeroSlider />
+                {/* <HeroSlider /> */}
+                <CustomSlider />
+
+                {/* <LinkedSwipers /> */}
               </div>
             </div>
           </div>
